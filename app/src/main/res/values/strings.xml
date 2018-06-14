@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">NewsNets</string>
+
+    <!--配置项目的字段-->
+    <string name="navigation_news">新闻</string>
+    <string name="navigation_about">关于</string>
+    <string name="navigation_images">图片</string>
+    <string name="navigation_weather">天气</string>
+    <!--author-->
+    <string name="author">fsc</string>
+
+    <string name="menu_settings">settings</string>
+    <string name="drawer_open">open</string>
+    <string name="drawer_clos">close</string>
+</resources>
