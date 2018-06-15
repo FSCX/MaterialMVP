@@ -12,4 +12,11 @@
     <string name="menu_settings">settings</string>
     <string name="drawer_open">open</string>
     <string name="drawer_clos">close</string>
+
+
+    <string name="top">头条</string>
+    <string name="nba">NBA</string>
+    <string name="cars">汽车</string>
+    <string name="jokes">故事</string>
+
 </resources>

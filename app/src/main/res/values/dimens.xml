@@ -2,6 +2,8 @@
 <resources>
     <dimen name="elevation_size">5dp</dimen>
     <dimen name="padding">16dp</dimen>
+    <dimen name="padding_top">5dp</dimen>
+    <dimen name="car_margin">5dp</dimen>
 
     <dimen name="navigation_header_height">192dp</dimen>
 
@@ -13,5 +15,13 @@
 
     <dimen name="text_size">18sp</dimen>
 
+    <dimen name="item_news_padding">12sp</dimen>
+
+    <dimen name="item_news_img_width">86dp</dimen>
+    <dimen name="item_news_img_height">60dp</dimen>
+
+    <dimen name="item_news_margin_left">8dp</dimen>
+    <dimen name="item_news_content_margin_top">6dp</dimen>
+    <dimen name="text_12sp">12sp</dimen>
 
 </resources>
