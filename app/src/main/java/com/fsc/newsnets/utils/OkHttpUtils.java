@@ -62,8 +62,10 @@ public class OkHttpUtils {
                 try {
                     String str = request.body().toString();
                     if(callback.mType == String.class){
-                        //此处缺少json解析的数据，后期补上
-                        Object obj = "";
+                        sendSuccessCallback(callback,str);
+                    }else {
+                        //此处缺少json解析的数据，后期补上(已处理)
+                        Object obj = JsonUtils.deserialize(str,callback.mType);
                         sendSuccessCallback(callback,obj);
                     }
                 } catch (final Exception e) {
