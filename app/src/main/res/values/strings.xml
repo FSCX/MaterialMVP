@@ -19,4 +19,20 @@
     <string name="cars">汽车</string>
     <string name="jokes">故事</string>
 
+    <string name="weather_layout_city">深圳</string>
+    <string name="weather_layout_today">2018年6月19日</string>
+
+    <string name="weather_tem">28℃-35℃</string>
+    <string name="weather_wind">微风</string>
+    <string name="weather_zhenyuzhuanyin">阵雨转阴</string>
+
+    <string name="Tuesday">星期二</string>
+
+
+    <string name="app_description">本项目使用mvp模式设计，并采用Material Design UI设计</string>
+    <string name="app_github_url">https://github.com/FSCX/MaterialMVP</string>
+    <string name="email">1694336389@qq.com</string>
+    <string name="blog">https://my.csdn.net/</string>
+
+
 </resources>

@@ -3,6 +3,11 @@
     <dimen name="elevation_size">5dp</dimen>
     <dimen name="padding">16dp</dimen>
     <dimen name="padding_top">5dp</dimen>
+
+    <dimen name="padding_fragment_weather">12dp</dimen>
+    <dimen name="margin_left">24dp</dimen>
+
+
     <dimen name="car_margin">5dp</dimen>
 
     <dimen name="navigation_header_height">192dp</dimen>
@@ -23,5 +28,9 @@
     <dimen name="item_news_margin_left">8dp</dimen>
     <dimen name="item_news_content_margin_top">6dp</dimen>
     <dimen name="text_12sp">12sp</dimen>
+    <dimen name="weather_data_padding">4dp</dimen>
+
+    <dimen name="fragment_about_padding">10dp</dimen>
+    <dimen name="fragment_about_text_size">16sp</dimen>
 
 </resources>
