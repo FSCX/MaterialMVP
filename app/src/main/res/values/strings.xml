@@ -34,5 +34,7 @@
     <string name="email">1694336389@qq.com</string>
     <string name="blog">https://my.csdn.net/</string>
 
+    <string name="title_activity_news_detail">NewsDetailActivity</string>
+
 
 </resources>
