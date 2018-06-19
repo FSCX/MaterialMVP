@@ -1,17 +1,17 @@
 package com.fsc.newsnets.news.presenter;
 import android.content.Context;
 
-import com.lauren.simplenews.beans.NewsDetailBean;
-import com.lauren.simplenews.news.model.NewsModel;
-import com.lauren.simplenews.news.model.NewsModelImpl;
-import com.lauren.simplenews.news.model.OnLoadNewsDetailListener;
-import com.lauren.simplenews.news.view.NewsDetailView;
+import com.fsc.newsnets.bean.NewsDetailbean;
+import com.fsc.newsnets.news.model.NewsModel;
+import com.fsc.newsnets.news.model.NewsModelImpl;
+import com.fsc.newsnets.news.model.OnLoadNewsDetailListener;
+import com.fsc.newsnets.news.view.NewsDetailView;
 
 /**news 详情presenter接口
  * Created by fsc on 2018/6/17.
  */
 
-public class NewsDetailPresenterImpl implements NewsDetailPresenter,OnLoadNewsDetailListener{
+public class NewsDetailPresenterImpl implements NewsDetailPresenter,OnLoadNewsDetailListener {
     private static final String TAG = "NewsDetailPresenterImpl";
     private Context mContext;
     private NewsModel mNewsModel;
@@ -29,13 +29,14 @@ public class NewsDetailPresenterImpl implements NewsDetailPresenter,OnLoadNewsDe
         mNewsModel.loadNewsDetail(docId,this);
     }
     @Override
-    public void onSuccess(NewsDetailBean newsDetailBean) {
+    public void onSuccess(NewsDetailbean newsDetailBean) {
         if (newsDetailBean != null) {
             mNewsDetailView.showNewsDetailContent(newsDetailBean.getBody());
         }
         mNewsDetailView.hideProgress();
     }
-    @Override void onFailure(String msg,Exception e) {
+    @Override
+        public void onFailure(String msg,Exception e) {
         mNewsDetailView.hideProgress();
     }
 }

@@ -159,27 +159,35 @@ public class OkHttpUtils {
 
     /**
      * http请求回调类,回调方法在UI线程中执行
+     * @param <T>
      */
-    public static abstract class ResultCallback<T>{
+    public static abstract class ResultCallback<T> {
+
         Type mType;
 
-        public ResultCallback() {
+        public ResultCallback(){
             mType = getSuperclassTypeParameter(getClass());
         }
 
-        static Type getSuperclassTypeParameter(Class<?> subclass){
+        static Type getSuperclassTypeParameter(Class<?> subclass) {
             Type superclass = subclass.getGenericSuperclass();
-            if(superclass instanceof  Class){
-                throw new RuntimeException("Missing type parameter");
+            if (superclass instanceof Class) {
+                throw new RuntimeException("Missing type parameter.");
             }
-            ParameterizedType parameterizedType = (ParameterizedType) superclass;
-            return $Gson$Types.canonicalize(parameterizedType.getActualTypeArguments()[0]);
+            ParameterizedType parameterized = (ParameterizedType) superclass;
+            return $Gson$Types.canonicalize(parameterized.getActualTypeArguments()[0]);
         }
 
-        //请求成功回调
+        /**
+         * 请求成功回调
+         * @param response
+         */
         public abstract void onSuccess(T response);
 
-        //请求失败回调
+        /**
+         * 请求失败回调
+         * @param e
+         */
         public abstract void onFailure(Exception e);
     }
 }

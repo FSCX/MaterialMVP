@@ -25,10 +25,10 @@ import butterknife.Unbinder;
  * 新闻列表
  */
 public class NewsFragment extends Fragment {
-    private static final int NEWS_TYPE_TOP = 0;
-    private static final int NEWS_TYPE_NBA = 1;
-    private static final int NEWS_TYPE_CARS = 2;
-    private static final int NEWS_TYPE_JOKES = 3;
+    public static final int NEWS_TYPE_TOP = 0;
+    public static final int NEWS_TYPE_NBA = 1;
+    public static final int NEWS_TYPE_CARS = 2;
+    public static final int NEWS_TYPE_JOKES = 3;
     @BindView(R.id.tab_layout)
     TabLayout tabLayout;
     @BindView(R.id.viewpager)

@@ -9,16 +9,19 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.fsc.newsnets.R;
-import fsc.newsnets.beans.ImageBean;
-import fsc.newsnets.utils.ImageLoaderUtils;
-import fsc.newsnets.utils.ToolUtil;
+import com.fsc.newsnets.bean.ImagesBean;
+import com.fsc.newsnets.utils.ImageLoaderUtils;
+import com.fsc.newsnets.utils.ToolUtil;
+
+import java.util.List;
+
 /**
  * 图片的适配器
  * Created by fsc on 2018/6/17.
  */
 
 public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ItemViewHolder> {
-    private List<ImageBean> mData;
+    private List<ImagesBean> mData;
     private Context mContext;
     private int mMaxWidth;
     private int mMaxHeight;
@@ -31,7 +34,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ItemViewHold
         mMaxHeight = ToolUtil.getHeightInPx(mContext) - ToolUtil.getStatusHeight(mContext)
                 - ToolUtil.dip2px(mContext,96);
     }
-    public void setmData(List<ImageBean> data) {
+    public void setmData(List<ImagesBean> data) {
         this.mData = data;
         this.notifyDataSetChanged();
     }
@@ -45,18 +48,18 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ItemViewHold
 
     @Override
     public void onBindViewHolder(ImageAdapter.ItemViewHolder holder, int position) {
-        ImageBean imageBean = mData.get(position);
-        if (imageBean == null) {
+        ImagesBean imagesBean = mData.get(position);
+        if (imagesBean == null) {
             return;
         }
-        holder.mTitle.setText(imageBean.getTitle);
-        float scale = (float) imageBean.getWidth() / (float) mMaxWidth;
-        int height = (int)(imageBean.getHeight() / scale);
+        holder.mTitle.setText(imagesBean.getTitle());
+        float scale = (float) imagesBean.getWidth() / (float) mMaxWidth;
+        int height = (int)(imagesBean.getHeight() / scale);
         if(height > mMaxHeight){
             height = mMaxHeight;
         }
-        holder.mTmage.setLayoutParams(new LinearLayout.LayoutParams(mMaxWidth, height));
-        ImageLoaderUtils.display(mContext,holder.mImage,imageBean.getThumburl());
+        holder.mImage.setLayoutParams(new LinearLayout.LayoutParams(mMaxWidth, height));
+        ImageLoaderUtils.display(mContext,holder.mImage,imagesBean.getThumburl());
     }
     @Override
     public int getItemCount() {
@@ -65,8 +68,8 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ItemViewHold
         }
         return mData.size();
     }
-    public ImageBean getItem(int position) {
-        return mData = null ? null : mData.get(position);
+    public ImagesBean getItem(int position) {
+        return mData == null ? null : mData.get(position);
     }
 
     public void setmOnItemClickListener(OnItemClickListener onItemClickListener) {
@@ -84,13 +87,14 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ItemViewHold
         public ItemViewHolder(View v){
             super(v);
             mTitle = (TextView) v.findViewById(R.id.tvTitle);
-            mImage = (ImageView) v.findViewById(R.id.tvImage);
+            mImage = (ImageView) v.findViewById(R.id.ivImage);
             v.setOnClickListener(this);
         }
+
         @Override
-        public void OnClick(View view) {
+        public void onClick(View v) {
             if (mOnItemClickListener != null) {
-                mOnItemClickListener.onItemClick(view,this.getPosition());
+                mOnItemClickListener.onItemClick(v,this.getPosition());
             }
         }
     }

@@ -21,7 +21,7 @@ public class Urls {
     //新闻详情
     public static final String NEW_DETAIL= HOST + "nc/article/";
 
-    public static final String COMMON_URL = HOST + "nc/article/list/;
+    public static final String COMMON_URL = HOST + "nc/article/list/";
     //汽车
     public static final String CAR_ID = "T1348654060988";
 

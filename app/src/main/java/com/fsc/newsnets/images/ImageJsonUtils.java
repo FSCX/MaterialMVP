@@ -1,10 +1,14 @@
 package com.fsc.newsnets.images;
+import com.fsc.newsnets.bean.ImagesBean;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.fsc.newsnets.beans.ImageBean;
 import com.fsc.newsnets.utils.JsonUtils;
 import com.fsc.newsnets.utils.LogUtils;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 图片json解析工具
  * Created by fsc on 2018/6/17.
@@ -18,17 +22,17 @@ public class ImageJsonUtils{
      * @param res
      * @return
      */
-    public static List<ImageBean> readJsonImageBeans(String res) {
-        List<ImageBean> beans = new ArrayList<>();
+    public static List<ImagesBean> readJsonImageBeans(String res) {
+        List<ImagesBean> beans = new ArrayList<>();
         try {
             JsonParser parser = new JsonParser();
             JsonArray jsonArray = parser.parse(res).getAsJsonArray();
             for (int i = 1 ; i < jsonArray.size() ; i++) {
                 JsonObject jo = jsonArray.get(i).getAsJsonObject();
-                ImageBean news = JsonUtils.deseralize(jo,ImageBean.class);
+                ImagesBean news = JsonUtils.deserialize(jo,ImagesBean.class);
                 beans.add(news);
             }
-        } catch (Exception exception) {
+        } catch (Exception e) {
             LogUtils.e(TAG, "readJsonImageBeans error", e);
         }
         return beans;

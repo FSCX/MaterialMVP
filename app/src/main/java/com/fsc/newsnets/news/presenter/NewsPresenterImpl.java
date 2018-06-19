@@ -1,18 +1,21 @@
 package com.fsc.newsnets.news.presenter;
-import com.lauren.simplenews.beans.NewsBean;
-import com.lauren.simplenews.commons.Urls;
-import com.lauren.simplenews.news.model.NewsModel;
-import com.lauren.simplenews.news.model.NewsModelImpl;
-import com.lauren.simplenews.news.model.OnLoadNewsListListener;
-import com.lauren.simplenews.news.view.NewsView;
-import com.lauren.simplenews.news.widget.NewsFragment;
-import com.lauren.simplenews.utils.LogUtils;
+
+import com.fsc.newsnets.bean.NewsBean;
+import com.fsc.newsnets.commons.Urls;
+import com.fsc.newsnets.news.model.NewsModel;
+import com.fsc.newsnets.news.model.NewsModelImpl;
+import com.fsc.newsnets.news.model.OnLoadNewsListListener;
+import com.fsc.newsnets.news.view.NewsView;
+import com.fsc.newsnets.news.widget.NewsFragment;
+import com.fsc.newsnets.utils.LogUtils;
+
+import java.util.List;
 
 /**news 列表presenter接口实现类
  * Created by fsc on 2018/6/17.
  */
 
-public class NewsPresenterImpl implements NewsPresenter,OnLoadNewsListListener{
+public class NewsPresenterImpl implements NewsPresenter,OnLoadNewsListListener {
     private static final String TAG = "NewsPresenterImpl";
     private NewsView mNewsView;
     private NewsModel mNewsModel;
